@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt — Emer Värk</title>
+  <meta name="description" content="Eesti AI-praktik visuaalproduktsioonis. Õpetan loovagentuure ja brändimeeskondi, kuidas saada AI-st visuaale, mida saab avaldada." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&family=DM+Mono:wght@400;500&family=Fira+Code:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script src="content.js?v=2"></script>
+
+  <script>
+    // Tweak defaults — host rewrites this on disk via __edit_mode_set_keys
+    window.__TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "theme": "a",
+      "density": "regular",
+      "accent": "#DAFE00",
+      "accentFg": "#0A0A0A",
+      "fontMono": "IBM Plex Mono",
+      "fontSans": "Geist",
+      "displayFamily": "mono",
+      "heroLine1Et": "AI visuaalproduktsioonis.",
+      "heroLine2Et": "Kunstniku silmaga.",
+      "heroLine1En": "AI in visual production.",
+      "heroLine2En": "With an artist's eye."
+    }/*EDITMODE-END*/;
+  </script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="chrome.jsx"></script>
+  <script type="text/babel" src="home.jsx"></script>
+  <script type="text/babel" src="pages.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      return (
+        <window.PageChrome active="contact">
+          {({ lang, t }) => (
+            <window.ContactPage lang={lang} t={t} />
+          )}
+        </window.PageChrome>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("app")).render(<App />);
+  </script>
+</body>
+</html>
